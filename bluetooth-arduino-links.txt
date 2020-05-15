@@ -16,3 +16,9 @@ https://github.com/mozilla/project_haiku.iot/blob/master/Bluetooth/HC-05-Bluetoo
 
 https://github.com/mozilla/project_haiku.iot/wiki/Bluetooth
 
+https://www.instructables.com/id/AT-command-mode-of-HC-05-Bluetooth-module/
+
+http://www.martyncurrey.com/arduino-with-hc-05-bluetooth-module-at-mode/
+
+https://howtomechatronics.com/tutorials/arduino/how-to-configure-pair-two-hc-05-bluetooth-module-master-slave-commands/
+
