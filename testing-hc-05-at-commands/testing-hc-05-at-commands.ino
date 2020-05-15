@@ -1,3 +1,20 @@
+//  Sketc: basicSerialWithNL_001
+// 
+//  Uses hardware serial to talk to the host computer and software serial 
+//  for communication with the Bluetooth module
+//  Intended for Bluetooth devices that require line end characters "\r\n"
+//
+//  Pins
+//  Arduino 5V out TO BT VCC
+//  Arduino GND to BT GND
+//  Arduino D9 to BT RX through a voltage divider
+//  Arduino D8 BT TX (no need voltage divider)
+//
+//  When a command is entered in the serial monitor on the computer 
+//  the Arduino will relay it to the bluetooth module and display the result.
+//
+ 
+ 
 #include <SoftwareSerial.h>
 SoftwareSerial BTserial(10, 11); // RX | TX
  
