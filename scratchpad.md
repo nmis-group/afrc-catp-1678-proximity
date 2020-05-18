@@ -7,7 +7,11 @@ AT+INIT
 AT+INQM=1,x,y (change x to an integer corresponding to number of inquiries, y is timeout value between 1 and 48, with 48 being roughly 60 s - a command would be AT+INQM=1,1000,48)
 AT+INQ
 
+example return of AT+INQ:
 
++INQ:14:3:55B0F,1F00,FFDA
+
+Last 4 characters indicate RSSI - need to convert from hexadecimals to integers
 
 
 
