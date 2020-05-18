@@ -6,10 +6,9 @@ SoftwareSerial BTserial(10, 11); // RX | TX
 const long baudRate = 38400; 
 char c=' ';
 const byte numChars = 32;
-char receivedChars[numChars];
+char recvc[numChars];
 boolean newData = false;
-String hexval = "0x";
-char hexval_char[6];
+String hexval;
 long decval;
  
 void setup() {
@@ -58,9 +57,9 @@ void setup() {
 void loop() {
     BTserial.write("AT+INQ\r\n");
     recvHC05();
-    showNewData();
+    showhexvals();
     BTserial.flush();
-    delay(500);
+    delay(1000);
 //    BTserial.write("AT+INQ\r\n");
 //    while (BTserial.available())
 //    {
@@ -76,7 +75,7 @@ void recvHC05() {
     static boolean recvInProgress = false;
     static byte ndx = 0;
     char startMarker = '+';
-    char endMarker = '\r';
+    char endMarker = '\n';
     char rc;
  
     while (BTserial.available() > 0 && newData == false) {
@@ -84,14 +83,14 @@ void recvHC05() {
 
         if (recvInProgress == true) {
             if (rc != endMarker) {
-                receivedChars[ndx] = rc;
+                recvc[ndx] = rc;
                 ndx++;
                 if (ndx >= numChars) {
                     ndx = numChars - 1;
                 }
             }
             else {
-                receivedChars[ndx] = '\0'; // terminate the string
+                recvc[ndx] = '\0'; // terminate the string
                 recvInProgress = false;
                 ndx = 0;
                 newData = true;
@@ -104,20 +103,14 @@ void recvHC05() {
     }
 }
 
-void showNewData() {
+void showhexvals() {
     if (newData == true) {
-        hexval = "0x"+String(receivedChars).substring(20, 24);
-        hexval.toCharArray(hexval_char, 6);
-        decval = strtol(hexval_char, NULL, 16);
+        hexval = "0x"+String(recvc).substring(20, 24);
+        decval = strtol(hexval.c_str(), NULL, 16);
         Serial.print("Received: ");
-        Serial.print(receivedChars[20]);
-        Serial.print(receivedChars[21]);
-        Serial.print(receivedChars[22]);
-        Serial.print(receivedChars[23]);
-        Serial.print(", String: ");
-        Serial.print(hexval);
+        Serial.print(recvc);
         Serial.print(", Decimal: ");
-        Serial.println(hexval_char);
+        Serial.println(decval);
         newData = false;
     }
 }
