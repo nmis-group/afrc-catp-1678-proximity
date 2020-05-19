@@ -38,28 +38,35 @@ void setup() {
       c = BTserial.read();
       Serial.write(c);
     }
-    Serial.println("Initialising for inquiries...");
-    BTserial.write("AT+INIT\r\n");
-    delay(100);
-    while (BTserial.available()){
-      c = BTserial.read();
-    }    
-    Serial.println("Sending inquiry format...");    
-    BTserial.write("AT+INQM=1,1,48\r\n");
-    delay(100);
-    while (BTserial.available()){
-      c = BTserial.read();
-      Serial.write(c);
-    }
+//    Serial.println("Initialising for inquiries...");
+//    BTserial.write("AT+INIT\r\n");
+//    delay(100);
+//    while (BTserial.available()){
+//      c = BTserial.read();
+//    }    
+//    Serial.println("Sending inquiry format...");    
+//    BTserial.write("AT+INQM=1,1,48\r\n");
+//    delay(100);
+//    while (BTserial.available()){
+//      c = BTserial.read();
+//      Serial.write(c);
+//    }
     Serial.println("Begin inquiring available bluetooth slave devices...");
 }
 
 void loop() {
+    BTserial.write("AT+INIT\r\n");
+    delay(100);
+    BTserial.write("AT+INQM=1,1,48\r\n");
+    delay(100);
     BTserial.write("AT+INQ\r\n");
+    delay(100);
+    sendHC05();
     recvHC05();
     showhexvals();
-    BTserial.flush();
-    delay(1000);
+//    
+//    BTserial.flush();
+//    
 //    BTserial.write("AT+INQ\r\n");
 //    while (BTserial.available())
 //    {
@@ -75,7 +82,7 @@ void recvHC05() {
     static boolean recvInProgress = false;
     static byte ndx = 0;
     char startMarker = '+';
-    char endMarker = '\n';
+    char endMarker = '\r';
     char rc;
  
     while (BTserial.available() > 0 && newData == false) {
@@ -112,5 +119,7 @@ void showhexvals() {
         Serial.print(", Decimal: ");
         Serial.println(decval);
         newData = false;
+        BTserial.flush();
+        delay(100);
     }
 }
