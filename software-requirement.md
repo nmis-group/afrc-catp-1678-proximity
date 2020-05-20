@@ -9,6 +9,10 @@ HIGH LEVEL PROTOTYPE
 - turn off LED when back under threshold
 - test for multiple devices in proximity (5)
 
+
+Issues
+- polling stops randomly
+
 MARK 1
 debug mode on pcb (isolate power)
 

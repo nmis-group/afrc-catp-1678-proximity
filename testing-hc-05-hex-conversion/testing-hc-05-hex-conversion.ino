@@ -56,12 +56,11 @@ void setup() {
 
 void loop() {
     BTserial.write("AT+INIT\r\n");
-    delay(100);
+    delay(50);
     BTserial.write("AT+INQM=1,1,48\r\n");
-    delay(100);
+    delay(50);
     BTserial.write("AT+INQ\r\n");
-    delay(100);
-    sendHC05();
+    delay(50);
     recvHC05();
     showhexvals();
 //    
@@ -120,6 +119,6 @@ void showhexvals() {
         Serial.println(decval);
         newData = false;
         BTserial.flush();
-        delay(100);
+        delay(50);
     }
 }
