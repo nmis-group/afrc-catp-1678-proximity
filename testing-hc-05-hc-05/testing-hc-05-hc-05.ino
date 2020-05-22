@@ -7,10 +7,10 @@ const byte numChars = 32;
 char recvc[numChars];
 char c=' ';
 boolean newData = false;
-boolean fliprole = false;
 String hexval;
 long decval;
-unsigned int recvclen; 
+unsigned int recvclen;
+unsigned long time;
 
 void setup() {
     Serial.begin(9600);
@@ -19,12 +19,12 @@ void setup() {
 
 void loop() {
     BTserial.write("AT+ROLE=1\r\n");
-    delay(250);
+    delay(25);
     sendHC05();
     recvHC05();
     showRSSI();
     BTserial.write("AT+ROLE=0\r\n");
-    delay(250);   
+    delay(150);
 }
 
 void initHC05() {
@@ -33,9 +33,9 @@ void initHC05() {
     BTserial.write("AT\r\n");
     delay(50); while (BTserial.available()){c = BTserial.read();Serial.write(c);}
     Serial.println("Changing HC-05 mode to master...");
-//    BTserial.write("AT+ROLE=1\r\n");
-//    delay(50); while (BTserial.available()){c = BTserial.read();Serial.write(c);}
-    Serial.println("Begin inquiring bluetooth sdevices...");
+    BTserial.write("AT+ROLE=1\r\n");
+    delay(50); while (BTserial.available()){c = BTserial.read();Serial.write(c);}
+    Serial.println("Begin inquiring bluetooth devices...");
 }
 
 void sendHC05() {
