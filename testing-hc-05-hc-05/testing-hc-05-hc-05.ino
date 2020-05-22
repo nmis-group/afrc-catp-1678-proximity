@@ -20,10 +20,10 @@ void setup() {
 void loop() {
     BTserial.write("AT+ROLE=1\r\n");
     delay(25);
-    sendHC05();
+    inqmHC05();
     recvHC05();
     showRSSI();
-    BTserial.write("AT+ROLE=0\r\n");
+//    BTserial.write("AT+ROLE=0\r\n");
     delay(150);
 }
 
@@ -38,13 +38,14 @@ void initHC05() {
     Serial.println("Begin inquiring bluetooth devices...");
 }
 
-void sendHC05() {
+void inqmHC05() {
+    BTserial.write("AT+ROLE=1\r\n");
+    delay(25);
     BTserial.write("AT+INIT\r\n");
     delay(25);
     BTserial.write("AT+INQM=1,1,48\r\n");
     delay(25);
     BTserial.write("AT+INQ\r\n");
-    delay(25);
 }
 
 void recvHC05() {
