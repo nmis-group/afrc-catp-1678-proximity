@@ -17,14 +17,12 @@ void setup() {
 }
 
 void loop() {
-    BTserial.write("AT+ROLE=1\r\n");
-    delay(25);
     inqmHC05();
     recvHC05();
     showRSSI();
     delay(50);    
-//    BTserial.write("AT+ROLE=0\r\n");
-//    delay(150);
+    scanHC05();
+//    delay(50); 
 }
 
 void initHC05() {
@@ -33,20 +31,29 @@ void initHC05() {
     Serial.println("Resetting...");
     BTserial.write("AT+RESET\r\n");    
     delay(50); while (BTserial.available()){c = BTserial.read();Serial.write(c);}
-    Serial.println("Changing HC-05 mode to master...");
-    BTserial.write("AT+ROLE=1\r\n");
-    delay(50); while (BTserial.available()){c = BTserial.read();Serial.write(c);}
-    Serial.println("Begin inquiring bluetooth devices...");
+//    Serial.println("Changing HC-05 mode to master...");
+//    BTserial.write("AT+ROLE=1\r\n");
+//    delay(50); while (BTserial.available()){c = BTserial.read();Serial.write(c);}
+//    Serial.println("Begin inquiring bluetooth devices...");
 }
 
 void inqmHC05() {
-//    BTserial.write("AT+ROLE=1\r\n");
-//    delay(20);
+    BTserial.write("AT+ROLE=1\r\n");
+    delay(20);
     BTserial.write("AT+INIT\r\n");
     delay(20);
     BTserial.write("AT+INQM=1,20,5\r\n");
     delay(20);
     BTserial.write("AT+INQ\r\n");
+}
+
+void scanHC05() {
+    BTserial.write("AT+INQC\r\n");
+//    delay(20);
+    Serial.print(millis()/1000);
+    Serial.println(" | scanning...");  
+    BTserial.write("AT+ROLE=0\r\n");
+    delay(150);
 }
 
 void recvHC05() {
