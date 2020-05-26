@@ -1,38 +1,61 @@
 #include <ArduinoBLE.h>
 
+//String deviceID;
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial); // wait
-  
-  Serial.println("setup");
-  BLE.begin();
-  BLE.setEventHandler(BLEDiscovered, discovered);
-  BLE.scanForAddress("xx:yy:zz:aa:bb:cc", true);
-}
+  while (!Serial);
 
-void logDevice(BLEDevice dev) {
-  Serial.print("BLE device found: ");
-  Serial.print("address=");
-  Serial.print(dev.address());
-  Serial.print(", rssi=");
-  Serial.print(dev.rssi());
-  if (!dev.hasLocalName()) {
-    Serial.println("");
-    return;
+  // begin initialization
+  if (!BLE.begin()) {
+    Serial.println("starting BLE failed!");
+
+    while (1);
   }
-  Serial.print(", name=");
-  Serial.print(dev.localName());
-  Serial.println("");
-}
 
-void discovered(BLEDevice dev) {
-  BLE.stopScan();
-  logDevice(dev);
-  delay(250); // ms
-  BLE.scanForAddress("xx:yy:zz:aa:bb:cc", true);
+  Serial.println("BLE Central scan");
+
+  // start scanning for peripheral
+//  BLE.scan();
 }
 
 void loop() {
-  BLE.poll(1000); // ms
+  // check if a peripheral has been discovered
+  BLE.scan();
+  BLEDevice peripheral = BLE.available();
+  if (peripheral) {
+
+    if (peripheral.localName() == "Proximity Sensor 1") {
+
+      Serial.print(millis()/1000);
+      
+      Serial.print(" | RSSI: ");
+      Serial.print(peripheral.rssi());
+
+      Serial.print(" | Address: ");
+      Serial.print(peripheral.address());
+      
+      Serial.print(" | Local Name: ");
+      Serial.println(peripheral.localName());
+    }
+
+
+
+
+
+//    // print the local name, if present
+//    if (peripheral.hasLocalName()) {
+//      Serial.print(" | Local Name: ");
+//      Serial.print(peripheral.localName());
+//    }
+//
+//    // print the advertised service UUIDs, if present
+//    if (peripheral.hasAdvertisedServiceUuid()) {
+//      Serial.print(" | Service UUIDs: ");
+//      for (int i = 0; i < peripheral.advertisedServiceUuidCount(); i++) {
+//        Serial.print(peripheral.advertisedServiceUuid(i));
+//        Serial.print(" ");
+//      }
+//    }
+  }
 }
