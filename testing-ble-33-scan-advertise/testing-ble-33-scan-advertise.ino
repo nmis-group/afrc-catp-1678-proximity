@@ -36,10 +36,10 @@ void loop() {
         Serial.print(" | Local Name: ");
         Serial.println(peripheral.localName());
         if (peripheral.rssi() < -80){
-           digitalWrite(LED_BUILTIN, HIGH);
+           digitalWrite(LED_BUILTIN, LOW);
         }
         else {
-          digitalWrite(LED_BUILTIN, LOW); 
+          digitalWrite(LED_BUILTIN, HIGH); 
         }
       }
     }
