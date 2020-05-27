@@ -1,7 +1,5 @@
 #include <ArduinoBLE.h>
-boolean modeflag = false;
-
-//String deviceID;
+long randflip;
 
 void setup() {
   Serial.begin(9600);
@@ -15,18 +13,19 @@ void setup() {
 
   BLE.setLocalName("Proximity Sensor");
   Serial.println("Starting service...");
+  randomSeed(analogRead(0));
+  pinMode(LED_BUILTIN, OUTPUT);
   
-
-  // start scanning for peripheral
-//  BLE.scan();
 }
 
 void loop() {
-  // check if a peripheral has been discovered
-  while (modeflag == false) {
+  randflip = random(1000);
+  if (randflip < 500) {
     BLE.scan();
-    Serial.println("scanning...");
+//    Serial.println(millis()/1000);
+//    Serial.println(" | scanning...");
     BLEDevice peripheral = BLE.available();
+
     if (peripheral) {
       if (peripheral.localName() == "Proximity Sensor") {
         Serial.print(millis()/1000);
@@ -36,14 +35,16 @@ void loop() {
         Serial.print(peripheral.address());
         Serial.print(" | Local Name: ");
         Serial.println(peripheral.localName());
-        modeflag = true;
+        if (peripheral.rssi() < -80){
+           digitalWrite(LED_BUILTIN, HIGH);
+        }
+        else {
+          digitalWrite(LED_BUILTIN, LOW); 
+        }
       }
     }
   }
-  while (modeflag == true) {
+  if (randflip > 500){
     BLE.advertise();
-    Serial.println("advertising...");
-    delay(1000);
-    modeflag = false;
   }
 }
