@@ -111,10 +111,12 @@ void recvHC05() {
 
 void showhexvals() {
     if (newData == true) {
-        hexval = "0x"+String(recvc).substring(20, 24);
+        hexval = "0x"+String(recvc).substring(24, 28);
         decval = strtol(hexval.c_str(), NULL, 16);
         Serial.print("Received: ");
         Serial.print(recvc);
+        Serial.print(", Hexidecimal: ");
+        Serial.print(hexval);
         Serial.print(", Decimal: ");
         Serial.println(decval);
         newData = false;
