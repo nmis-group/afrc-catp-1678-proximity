@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=NetBattery_1 Pin=Microcontroller-VIN
+Added Component: Designator=Battery_Switch(SPST-2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Switch; 2 Leads"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "SPST-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=RX1TX2(HDR1X2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetBattery_1 Pin=Battery_Switch-1
+Added Pin To Net: NetName=NetBattery_Switch_2 Pin=Battery_Switch-2
+Added Pin To Net: NetName=NetBattery_Switch_2 Pin=Microcontroller-VIN
+Added Net: Name=NetBattery_Switch_2
+Added Pin To Net: NetName=NetMicrocontroller_RX Pin=Microcontroller-RX
+Added Pin To Net: NetName=NetMicrocontroller_RX Pin=RX1TX2-1
+Added Net: Name=NetMicrocontroller_RX
+Added Pin To Net: NetName=NetMicrocontroller_TX Pin=Microcontroller-TX
+Added Pin To Net: NetName=NetMicrocontroller_TX Pin=RX1TX2-2
+Added Net: Name=NetMicrocontroller_TX
+Added Member To Class: ClassName=Sheet1 Member=Component Battery_Switch SW-PB
+Added Member To Class: ClassName=Sheet1 Member=Component RX1TX2 Header 2

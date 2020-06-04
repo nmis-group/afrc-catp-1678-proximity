@@ -1,0 +1,79 @@
+Importer Log Report
+Project : NANO33BLE_V2.0.PrjPcb
+
+Section : Analyze Document - C:\Users\ahamilton\OneDrive - University of Strathclyde\nmis\proximity-tracking\pcb-mk1\PCB_Project\NANO33BLE_V2.0.brd
+    Analyzing data of C:\Users\ahamilton\OneDrive - University of Strathclyde\nmis\proximity-tracking\pcb-mk1\PCB_Project\NANO33BLE_V2.0.brd
+    Load settings
+    Load layers 175
+    Load board
+    Load Library "Arduino-ICs"
+    Load Packages 3
+    Load Library "Arduino-diodes"
+    Load Packages 4
+    Load Library "Arduino-pushbuttons"
+    Load Packages 1
+    Load Library "Arduino-rcl"
+    Load Packages 3
+    Load Library "Arduino-utility"
+    Load Packages 4
+    Load Library "Arduino-ucs&SoCs"
+    Load Packages 1
+    Load Library "Arduino-connectors"
+    Load Packages 3
+    Load Library "Arduino-Sensors"
+    Load Packages 4
+    ERROR: Unhandled typemfgpreviewcolors
+    ERROR: Unhandled typeerrors
+EndSection
+
+Section : Analyze Document - C:\Users\ahamilton\OneDrive - University of Strathclyde\nmis\proximity-tracking\pcb-mk1\PCB_Project\NANO33BLE_V2.0.sch
+    Analyzing data of C:\Users\ahamilton\OneDrive - University of Strathclyde\nmis\proximity-tracking\pcb-mk1\PCB_Project\NANO33BLE_V2.0.sch
+    Load settings
+    Load layers 175
+    Load schematic
+    Load Libraries 10
+    Load Library "supply1"
+    Load Packages 0
+    Load Symbols 1
+    Load DeviceSets 1
+    Load Library "Arduino-ICs"
+    Load Packages 3
+    Load Symbols 4
+    Load DeviceSets 3
+    Load Library "Arduino-diodes"
+    Load Packages 6
+    Load Symbols 4
+    Load DeviceSets 4
+    Load Library "Arduino-pushbuttons"
+    Load Packages 2
+    Load Symbols 1
+    Load DeviceSets 1
+    Load Library "Arduino-rcl"
+    Load Packages 9
+    Load Symbols 3
+    Load DeviceSets 3
+    Load Library "Arduino-utility"
+    Load Packages 8
+    Load Symbols 4
+    Load DeviceSets 4
+    Load Library "Arduino-ucs&SoCs"
+    Load Packages 1
+    Load Symbols 2
+    Load DeviceSets 1
+    Load Library "Arduino-supply"
+    Load Packages 0
+    Load Symbols 4
+    Load DeviceSets 4
+    Load Library "Arduino-connectors"
+    Load Packages 5
+    Load Symbols 3
+    Load DeviceSets 3
+    Load Library "Arduino-Sensors"
+    Load Packages 6
+    Load Symbols 4
+    Load DeviceSets 4
+    Load Attributes 0
+    Load Classes 2
+    Load Parts 105
+    Load Sheets 1
+EndSection

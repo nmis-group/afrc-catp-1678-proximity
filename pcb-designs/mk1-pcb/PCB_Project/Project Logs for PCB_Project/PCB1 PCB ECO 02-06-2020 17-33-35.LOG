@@ -1,0 +1,7 @@
+Added Pin To Net: NetName=NetBattery_1 Pin=Battery-1
+Added Pin To Net: NetName=NetBattery_1 Pin=Microcontroller-VIN
+Added Net: Name=NetBattery_1
+Added Pin To Net: NetName=NetBattery_2 Pin=Battery-2
+Added Pin To Net: NetName=NetBattery_2 Pin=Microcontroller-GND
+Added Pin To Net: NetName=NetBattery_2 Pin=Microcontroller-GND
+Added Net: Name=NetBattery_2

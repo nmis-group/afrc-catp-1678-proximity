@@ -1,0 +1,7 @@
+Change Component Designator: OldDesignator=Proximity NewDesignator=SP
+Change Component Designator: OldDesignator=Stage1 NewDesignator=S1
+Change Component Designator: OldDesignator=Stage2 NewDesignator=S2
+Change Component Designator: OldDesignator=Stage3 NewDesignator=S3
+Added Pin To Net: NetName=NetBattery_2 Pin=Microcontroller-GND
+Added Pin To Net: NetName=NetBattery_2 Pin=Microcontroller-GND
+Change Net Name : Old Net Name=NetProximity_N New Net Name=NetR1_1

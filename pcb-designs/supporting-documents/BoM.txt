@@ -1,0 +1,12 @@
+Real Time Clock - DS3231
+SD Card Logger - 
+Micrcontroller/BLE - Arduino Nano 33 BLE
+Indicators - 4x LED
+Battery - Lipo
+	https://uk.farnell.com/bak/18650ca-2s-3j/battery-lithium-ion-7-4v-2250mah/dp/2401854
+
+Battery Connector
+	https://uk.farnell.com/jst-japan-solderless-terminals/xhp-3/connector-housing-2-5mm-3way/dp/1516265
+	https://uk.farnell.com/jst-japan-solderless-terminals/s3b-xh-a-lf-sn/header-right-angle-3way/dp/1516290?MER=sy-me-pd-mi-acce
+	
+Charger - Adafruit Powerboot 1000C

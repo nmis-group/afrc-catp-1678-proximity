@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=Microcontroller NewDesignator=MC
+Added Pin To Net: NetName=NetMicrocontroller_GND Pin=MC-GND
+Added Pin To Net: NetName=NetMicrocontroller_GND Pin=MC-GND
+Change Net Name : Old Net Name=NetMicrocontroller_D7 New Net Name=NetMC_D7
+Change Net Name : Old Net Name=NetMicrocontroller_D8 New Net Name=NetMC_D8
+Change Net Name : Old Net Name=NetMicrocontroller_D9 New Net Name=NetMC_D9
+Change Net Name : Old Net Name=NetMicrocontroller_D10 New Net Name=NetMC_D10
+Change Net Name : Old Net Name=NetMicrocontroller_GND New Net Name=NetMC_GND
+Change Net Name : Old Net Name=NetMicrocontroller_RX New Net Name=NetMC_RX
+Change Net Name : Old Net Name=NetMicrocontroller_TX New Net Name=NetMC_TX

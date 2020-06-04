@@ -1,0 +1,18 @@
+Added Component: Designator=MC(ARDUINO_NANO_BLE_33)
+Added Component: Designator=P?(HDR2X11H)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetMC_D7 Pin=MC-D7
+Added Pin To Net: NetName=NetMC_D8 Pin=MC-D8
+Added Pin To Net: NetName=NetMC_D9 Pin=MC-D9
+Added Pin To Net: NetName=NetMC_D10 Pin=MC-D10
+Added Pin To Net: NetName=NetBattery_2 Pin=MC-GND
+Added Pin To Net: NetName=NetBattery_2 Pin=MC-GND
+Added Pin To Net: NetName=NetMC_GND Pin=MC-GND
+Added Pin To Net: NetName=NetMC_GND Pin=MC-GND
+Added Pin To Net: NetName=NetMC_RX Pin=MC-RX
+Added Pin To Net: NetName=NetMC_TX Pin=MC-TX
+Added Pin To Net: NetName=Net_1 Pin=MC-VIN
+Added Member To Class: ClassName=Sheet1 Member=Component MC NANO33BLE
+Added Member To Class: ClassName=Sheet1 Member=Component P? Header 11X2H

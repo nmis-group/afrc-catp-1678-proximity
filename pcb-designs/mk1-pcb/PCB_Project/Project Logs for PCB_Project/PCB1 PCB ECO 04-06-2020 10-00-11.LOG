@@ -1,0 +1,38 @@
+Removed Member From Class: ClassName=Sheet1 Member=D1
+Removed Member From Class: ClassName=Sheet1 Member=D2
+Removed Member From Class: ClassName=Sheet1 Member=D3
+Removed Member From Class: ClassName=Sheet1 Member=D4
+Added Component: Designator=Proximity(LED_PPS)
+Added Component: Designator=Stage1(LED_PPS)
+Added Component: Designator=Stage2(LED_PPS)
+Added Component: Designator=Stage3(LED_PPS)
+Added Pin To Net: NetName=NetMicrocontroller_GND Pin=Microcontroller-GND
+Added Pin To Net: NetName=NetMicrocontroller_GND Pin=Microcontroller-GND
+Added Pin To Net: NetName=NetMicrocontroller_D7 Pin=Microcontroller-D7
+Added Pin To Net: NetName=NetMicrocontroller_D7 Pin=Stage3-P
+Added Net: Name=NetMicrocontroller_D7
+Added Pin To Net: NetName=NetMicrocontroller_D8 Pin=Microcontroller-D8
+Added Pin To Net: NetName=NetMicrocontroller_D8 Pin=Stage2-P
+Added Net: Name=NetMicrocontroller_D8
+Added Pin To Net: NetName=NetMicrocontroller_D9 Pin=Microcontroller-D9
+Added Pin To Net: NetName=NetMicrocontroller_D9 Pin=Stage1-P
+Added Net: Name=NetMicrocontroller_D9
+Added Pin To Net: NetName=NetMicrocontroller_D10 Pin=Microcontroller-D10
+Added Pin To Net: NetName=NetMicrocontroller_D10 Pin=Proximity-P
+Added Net: Name=NetMicrocontroller_D10
+Added Pin To Net: NetName=NetProximity_N Pin=Proximity-N
+Added Pin To Net: NetName=NetProximity_N Pin=R1-1
+Added Net: Name=NetProximity_N
+Added Pin To Net: NetName=NetR2_1 Pin=R2-1
+Added Pin To Net: NetName=NetR2_1 Pin=Stage1-N
+Added Net: Name=NetR2_1
+Added Pin To Net: NetName=NetR3_1 Pin=R3-1
+Added Pin To Net: NetName=NetR3_1 Pin=Stage2-N
+Added Net: Name=NetR3_1
+Added Pin To Net: NetName=NetR4_1 Pin=R4-1
+Added Pin To Net: NetName=NetR4_1 Pin=Stage3-N
+Added Net: Name=NetR4_1
+Added Member To Class: ClassName=Sheet1 Member=Component Proximity LED_PPS
+Added Member To Class: ClassName=Sheet1 Member=Component Stage1 LED_PPS
+Added Member To Class: ClassName=Sheet1 Member=Component Stage2 LED_PPS
+Added Member To Class: ClassName=Sheet1 Member=Component Stage3 LED_PPS

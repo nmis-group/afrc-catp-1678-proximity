@@ -1,0 +1,18 @@
+Added Component: Designator=S1(LED_PPS)
+Added Component: Designator=S2(LED_PPS)
+Added Component: Designator=S3(LED_PPS)
+Added Component: Designator=SP(LED_PPS)
+Added Pin To Net: NetName=NetMicrocontroller_GND Pin=Microcontroller-GND
+Added Pin To Net: NetName=NetMicrocontroller_GND Pin=Microcontroller-GND
+Added Pin To Net: NetName=NetR2_1 Pin=S1-N
+Added Pin To Net: NetName=NetMicrocontroller_D9 Pin=S1-P
+Added Pin To Net: NetName=NetR3_1 Pin=S2-N
+Added Pin To Net: NetName=NetMicrocontroller_D8 Pin=S2-P
+Added Pin To Net: NetName=NetR4_1 Pin=S3-N
+Added Pin To Net: NetName=NetMicrocontroller_D7 Pin=S3-P
+Added Pin To Net: NetName=NetR1_1 Pin=SP-N
+Added Pin To Net: NetName=NetMicrocontroller_D10 Pin=SP-P
+Added Member To Class: ClassName=Sheet1 Member=Component S1 LED_PPS
+Added Member To Class: ClassName=Sheet1 Member=Component S2 LED_PPS
+Added Member To Class: ClassName=Sheet1 Member=Component S3 LED_PPS
+Added Member To Class: ClassName=Sheet1 Member=Component SP LED_PPS
