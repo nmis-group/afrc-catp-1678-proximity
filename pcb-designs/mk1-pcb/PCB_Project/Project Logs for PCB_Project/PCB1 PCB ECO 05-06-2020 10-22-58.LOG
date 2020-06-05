@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=NetArdV_2 Pin=MC-+3V3
+Removed Pin From Net: NetName=NetArdV_4 Pin=MC-+5V
+Added Pin To Net: NetName=NetArdV_4 Pin=MC-+3V3
+Added Pin To Net: NetName=NetArdV_2 Pin=MC-+5V
+Added Pin To Net: NetName=NetMC_GND Pin=MC-GND
+Added Pin To Net: NetName=NetMC_GND Pin=MC-GND

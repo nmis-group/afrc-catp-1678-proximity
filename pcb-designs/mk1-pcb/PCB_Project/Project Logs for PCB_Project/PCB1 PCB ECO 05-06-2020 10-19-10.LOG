@@ -1,0 +1,15 @@
+Change Component Footprint: Designator=ArdV Old Footprint=HDR1X2 New Footprint=HDR1X4
+Change Component Comment : Designator=ArdV Old Comment=Header 2 New Comment=Header 4
+Added Pin To Net: NetName=NetMC_GND Pin=MC-GND
+Added Pin To Net: NetName=NetMC_GND Pin=MC-GND
+Added Pin To Net: NetName=NetArdV_3 Pin=ArdV-3
+Added Pin To Net: NetName=NetArdV_3 Pin=MC-AREF
+Added Net: Name=NetArdV_3
+Added Pin To Net: NetName=NetArdV_4 Pin=ArdV-4
+Added Pin To Net: NetName=NetArdV_4 Pin=MC-RESET
+Added Pin To Net: NetName=NetArdV_4 Pin=MC-RESET
+Added Net: Name=NetArdV_4
+Added Member To Class: ClassName=Sheet1 Member=Component ArdV Header 4
+Added Member To Class: ClassName=Sheet1 Member=Component Battery Header 3H
+Added Member To Class: ClassName=Sheet1 Member=Component MC NANO33BLE
+Added Member To Class: ClassName=Sheet1 Member=Component  Header 2

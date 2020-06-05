@@ -1,0 +1,2 @@
+Added Pin To Net: NetName=NetMC_GND Pin=Battery-3
+Change Net Name : Old Net Name=NetMC_GND New Net Name=NetBattery_3

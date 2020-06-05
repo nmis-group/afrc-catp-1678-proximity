@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=NetArdV_1 Pin=MC-+5V
+Removed Pin From Net: NetName=NetArdV_4 Pin=MC-RESET
+Removed Pin From Net: NetName=NetArdV_4 Pin=MC-RESET
+Added Pin To Net: NetName=NetArdV_4 Pin=MC-+5V
+Added Pin To Net: NetName=NetBattery_3 Pin=MC-GND
+Added Pin To Net: NetName=NetBattery_3 Pin=MC-GND
+Added Pin To Net: NetName=NetArdV_1 Pin=MC-RESET
+Added Pin To Net: NetName=NetArdV_1 Pin=MC-RESET
