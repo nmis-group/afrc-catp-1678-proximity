@@ -1,0 +1,29 @@
+MK2 BLE Based Proximity Sensor
+
+Context
+- NMIS has developed a proximity sensors based on RSSI of Bluetooth Low Energy operating device-to-device. There is not central basestation, each device is programmed to only parse device queries from other proximity sensors and ignore other devices.
+- The device consistes of an Arduino Nano 33 BLE (based on Nordic nRF52840) and other modules to allow battery operation.
+- The cost per device is consequently high due to the use of modules combined onto a PCB.
+- The intention is to create a MK2 version that will take the capabilities and create a single IC with minimal additional module requirements.
+
+Capabilities
+The device essentially needs to have similar capabilites as an Arduino Nano 33 BLE (based on Nordic nRF52840):
+- Bluetooth 5, IEEE 802.15.4-2006, 2.4 GHz transceive
+- ARM Cortex M4 32-bit processor with FPU, 64 MHz
+- Programmable via an appropriate C++ compiler
+- Storage device for writing timestamps and device ID's
+- Real-time clock (RTC) to allow accurate evaluation of time
+
+Expectation
+- A company to develop the prototype into a lower cost, single IC sensor hardware soltuon that will allow new software to be flashed to the device using the Arduino IDE (Arduino -> C/C++ -> board)
+
+Likely MK2 High Level BoM
+- Micrcontroller (likely Nordic nRF52840)
+- RTC (similar to Adafruit DS3231 Precision RTC Breakout)
+- SD Storage (similar to Microduino SD Storage)
+- Battery/Charging (LiPo 3.7V and Powerboost 1000C charger)
+- 5x LED with each able to be independently controlled by MC
+
+Other Considerations
+- Ability to reprogram via either by micro USB connection or suitable RX/TX connections to microcontroller.
+
