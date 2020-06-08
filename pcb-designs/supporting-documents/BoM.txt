@@ -1,12 +1,58 @@
-Real Time Clock - DS3231
-SD Card Logger - 
-Micrcontroller/BLE - Arduino Nano 33 BLE
-Indicators - 4x LED
-Battery - Lipo
-	https://uk.farnell.com/bak/18650ca-2s-3j/battery-lithium-ion-7-4v-2250mah/dp/2401854
+MK1 BoM
+
+Micrcontroller/BLE
+	- Arduino Nano 33 BLE
+	- Farnell order code: 3404694
+	- Quantity
+	- Unit price - £18
+
+Indicators - 5x LED
+	- GREEN - Farnell order code: 1003214
+	- RED - Farnell order code: 1003211
+	- YELLOW - Farnell order code: 1003213
+	- BLUE - Farnell order code: 1814427
+	- ORANGE - Farnell order code: 1003419
+	- Quantity
+	- Unit price - £1
+
+Battery
+	- 18659CA-2S-3J Rechargeable Battery 7.4V 2.25Ah
+	- 2401854
+	- Farnell order code: Quantity
+	- Unit price - £26.15
+
+Battery Connector
+	- S3B-XH-A (LF)(SN) -  Pin Header, Right Angle, Wire-to-Board, 2.5 mm, 1 Rows, 3 Contacts, Through Hole Right Angle 
+	- Farnell order code: 1516290
+	- Quantity - 200
+	- Unit price - £0.115
+
+Headers
+	- 90121-0762 - Pin Header, Right Angle, Wire-to-Board, 2.54 mm, 1 Rows, 2 Contacts, Through Hole Right Angle 
+	- Farnell order code: 9733442
+
+Resistor
+	- MBA02040C1001FC100 -  Through Hole Resistor, 1 kohm, MBA Series, 400 mW, ± 1%, Axial Leaded, 200 V 
+	- Farnell order code: 2614353
+	- Quantity - 200
+	- Unit price - £0.13
+
+Jumper
+	- M7581-05 -  Jumper (Busbar), Jumper Socket, Pin Headers, 2 Ways, 2.54 mm 
+	- Farnell order code: 2396303
+	- Quantity - 100
+	- Unit price - £0.07
+
+
 
 Battery Connector
 	https://uk.farnell.com/jst-japan-solderless-terminals/xhp-3/connector-housing-2-5mm-3way/dp/1516265
 	https://uk.farnell.com/jst-japan-solderless-terminals/s3b-xh-a-lf-sn/header-right-angle-3way/dp/1516290?MER=sy-me-pd-mi-acce
 	
 Charger - Adafruit Powerboot 1000C
+
+
+
+MK2 BoM
+Real Time Clock - DS3231
+SD Card Logger - 
