@@ -5,7 +5,7 @@ int lastFlag;
 
 void setup() {
     Serial.begin(9600);
-    pinMode(13, OUTPUT);
+    pinMode(11, OUTPUT);
     Serial.print("Set LED HIGH (1) or LOW (0)\r\n");
     delay(100);
     flag = -1;
@@ -18,13 +18,13 @@ void loop() {
     if(flag != lastFlag){
       switch(flag) {
           case 1:
-             digitalWrite(13,HIGH);
+             digitalWrite(11,HIGH);
              Serial.print("Setting LED to HIGH\r\n");
              lastFlag = flag;
           break;
 
           case 0:
-             digitalWrite(13,LOW);
+             digitalWrite(11,LOW);
              Serial.print("Setting LED to LOW\r\n");
              lastFlag = flag;
           break;
