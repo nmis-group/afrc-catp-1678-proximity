@@ -2,17 +2,10 @@
 long randflip;
 
 void setup() {
-  Serial.begin(9600);
-  while (!Serial);
-  if (!BLE.begin()) {
-    Serial.println("starting BLE failed!");
-    while (1);
-  }
-
+  BLE.begin();
   BLE.setLocalName("Proximity Sensor");
   randomSeed(analogRead(0));
   pinMode(10, OUTPUT);
-  
 }
 
 void loop() {
@@ -22,13 +15,6 @@ void loop() {
     BLEDevice peripheral = BLE.available();
     if (peripheral) {
 //      if (peripheral.localName() == "Proximity Sensor") {
-        Serial.print(millis()/1000);
-        Serial.print(" | RSSI: ");
-        Serial.print(peripheral.rssi());
-        Serial.print(" | Address: ");
-        Serial.print(peripheral.address());
-        Serial.print(" | Local Name: ");
-        Serial.println(peripheral.localName());
         if (peripheral.rssi() < -80){
            digitalWrite(10, LOW);
         }
