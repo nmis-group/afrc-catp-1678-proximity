@@ -1,5 +1,9 @@
 #include <ArduinoBLE.h>
 long randflip;
+int pin_prox = 10;
+int pin_lo = 9;
+int pin_mid = 8;
+int pin_hi = 7;
 
 void setup() {
   Serial.begin(9600);
@@ -11,7 +15,10 @@ void setup() {
 
   BLE.setLocalName("Proximity Sensor");
   randomSeed(analogRead(0));
-  pinMode(10, OUTPUT);
+  pinMode(pin_prox, OUTPUT);
+  pinMode(pin_lo, OUTPUT);
+  pinMode(pin_mid, OUTPUT);
+  pinMode(pin_hi, OUTPUT);
   
 }
 
@@ -30,10 +37,16 @@ void loop() {
         Serial.print(" | Local Name: ");
         Serial.println(peripheral.localName());
         if (peripheral.rssi() < -80){
-           digitalWrite(10, LOW);
+           digitalWrite(pin_prox, LOW);
+           digitalWrite(pin_lo, LOW);
+           digitalWrite(pin_mid, LOW);
+           digitalWrite(pin_hi, LOW);
         }
         else {
-          digitalWrite(10, HIGH); 
+          digitalWrite(pin_prox, HIGH);
+          digitalWrite(pin_lo, HIGH); 
+          digitalWrite(pin_mid, HIGH); 
+          digitalWrite(pin_hi, HIGH); 
         }
 //      }
     }
