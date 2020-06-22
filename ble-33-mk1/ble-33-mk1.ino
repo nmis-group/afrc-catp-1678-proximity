@@ -13,6 +13,19 @@ void setup() {
   pinMode(pin_lo, OUTPUT);
   pinMode(pin_mid, OUTPUT);
   pinMode(pin_hi, OUTPUT);
+
+  // turn on all lights to test
+  digitalWrite(pin_prox, HIGH);
+  digitalWrite(pin_lo, HIGH); 
+  digitalWrite(pin_mid, HIGH); 
+  digitalWrite(pin_hi, HIGH);
+  delay(1000);
+  
+  // turn then back off
+  digitalWrite(pin_prox, LOW);
+  digitalWrite(pin_lo, LOW); 
+  digitalWrite(pin_mid, LOW); 
+  digitalWrite(pin_hi, LOW);  
 }
 
 void loop() {
@@ -21,18 +34,14 @@ void loop() {
     BLE.scan();
     BLEDevice peripheral = BLE.available();
     if (peripheral) {
-//      if (peripheral.localName() == "Proximity Sensor") {
+      if (peripheral.localName() == "Proximity Sensor") {
         if (peripheral.rssi() < -80){
            digitalWrite(pin_prox, LOW);
-//al
         }
         else {
           digitalWrite(pin_prox, HIGH);
-//          digitalWrite(pin_lo, HIGH); 
-//          digitalWrite(pin_mid, HIGH); 
-//          digitalWrite(pin_hi, HIGH); 
         }
-//      }
+      }
     }
   }
   if (randflip > 500){
