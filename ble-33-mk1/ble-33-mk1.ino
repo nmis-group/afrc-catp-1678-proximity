@@ -6,8 +6,9 @@ int pin_mid = 8;
 int pin_hi = 7;
 
 void setup() {
+  Serial.begin(9600);
   BLE.begin();
-  BLE.setLocalName("Proximity Sensor");
+  BLE.setLocalName("Proximity Sensor 10");
   randomSeed(analogRead(0));
   pinMode(pin_prox, OUTPUT);
   pinMode(pin_lo, OUTPUT);
@@ -34,12 +35,20 @@ void loop() {
     BLE.scan();
     BLEDevice peripheral = BLE.available();
     if (peripheral) {
-      if (peripheral.localName() == "Proximity Sensor") {
-        if (peripheral.rssi() < -80){
+      if (peripheral.localName().startsWith("Sensor", 10)){
+        Serial.print(" | RSSI: ");
+        Serial.print(peripheral.rssi());
+        Serial.print(" | Address: ");
+        Serial.print(peripheral.address());
+        Serial.print(" | Local Name: ");
+        Serial.println(peripheral.localName());
+        if (peripheral.rssi() > -65){
+           digitalWrite(pin_prox, HIGH);
+           delay(100);
            digitalWrite(pin_prox, LOW);
         }
         else {
-          digitalWrite(pin_prox, HIGH);
+           digitalWrite(pin_prox, LOW);
         }
       }
     }
