@@ -21,10 +21,13 @@ int threshold = 75;
 int infCount;
 
 void setup() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9854ef626f7b9706e5bee0ca1bfbf35c1245c4ac
   Serial.begin(9600);
   BLE.begin();
-  BLE.setLocalName("Proximity Sensor");
+  BLE.setLocalName("Proximity Sensor 10");
   randomSeed(analogRead(0));
 
   //Initialise and flash each LED
@@ -60,12 +63,20 @@ void loop() {
     BLE.scan();
     BLEDevice peripheral = BLE.available();
     if (peripheral) {
-      if (peripheral.localName() == "Proximity Sensor") {
-        if (peripheral.rssi() < -80){
+      if (peripheral.localName().startsWith("Sensor", 10)){
+        Serial.print(" | RSSI: ");
+        Serial.print(peripheral.rssi());
+        Serial.print(" | Address: ");
+        Serial.print(peripheral.address());
+        Serial.print(" | Local Name: ");
+        Serial.println(peripheral.localName());
+        if (peripheral.rssi() > -65){
+           digitalWrite(pin_prox, HIGH);
+           delay(100);
            digitalWrite(pin_prox, LOW);
         }
         else {
-          digitalWrite(pin_prox, HIGH);
+           digitalWrite(pin_prox, LOW);
         }
       }
     }
