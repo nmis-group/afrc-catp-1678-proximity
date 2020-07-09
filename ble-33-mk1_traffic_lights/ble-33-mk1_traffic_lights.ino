@@ -1,9 +1,11 @@
 #include <ArduinoBLE.h>
 long randflip; 
+/*
 int pin_prox = 10;
 int pin_lo = 9;
 int pin_mid = 8;
 int pin_hi = 7;
+*/
 
 //Variables for counting
 const unsigned long intervalRSSI = 100;
@@ -22,7 +24,6 @@ int infCount;
 
 void setup() {
 
-  Serial.begin(9600);
   BLE.begin();
   BLE.setLocalName("Proximity Sensor");
   randomSeed(analogRead(0));
@@ -39,38 +40,68 @@ void setup() {
   rssiCount = 0;
   rssiTotal = 0;
   infCount = 0;
-  
-  // turn on all lights to test
-  digitalWrite(pin_prox, HIGH);
-  digitalWrite(pin_lo, HIGH); 
-  digitalWrite(pin_mid, HIGH); 
-  digitalWrite(pin_hi, HIGH);
-  delay(1000);
-  
-  // turn then back off
-  digitalWrite(pin_prox, LOW);
-  digitalWrite(pin_lo, LOW); 
-  digitalWrite(pin_mid, LOW); 
-  digitalWrite(pin_hi, LOW);  
 }
 
 void loop() {
+  currentTime = millis();
   randflip = random(1000);
   if (randflip < 500) {
     BLE.scan();
     BLEDevice peripheral = BLE.available();
     if (peripheral) {
       if (peripheral.localName() == "Proximity Sensor") {
+        /*
         if (peripheral.rssi() < -80){
            digitalWrite(pin_prox, LOW);
         }
         else {
           digitalWrite(pin_prox, HIGH);
         }
+        */
+        int rssi = peripheral.rssi();
+        if (currentTime - previousRSSITime >= intervalRSSI) {
+        rssiTotal += rssi;
+        rssiCount++;
+        if (rssi >= threshold){
+          digitalWrite(BLUE,HIGH); 
+        }
+        else{
+          digitalWrite(BLUE,LOW);  
+        }
+        previousRSSITime = currentTime;
       }
+      if (currentTime - previousSensorTime >= intervalSensor){
+        int meanRSSI = rssiTotal/rssiCount;
+        if (meanRSSI >= threshold){
+         infCount++;
+        }
+        previousSensorTime = currentTime;
+        rssiTotal = 0;
+        rssiCount = 0;
+      }
+      setLED();
+     }
     }
   }
   if (randflip > 500){
     BLE.advertise();
+  }
+}
+
+void setLED(){
+  if(infCount <= 10) {
+    digitalWrite(GREEN,HIGH);
+    digitalWrite(AMBER,LOW);
+    digitalWrite(RED,LOW);
+  }
+  else if(infCount > 10 && infCount <= 50){
+    digitalWrite(GREEN,LOW);
+    digitalWrite(AMBER,HIGH);
+    digitalWrite(RED,LOW);
+  }
+  else{
+    digitalWrite(GREEN,LOW);
+    digitalWrite(AMBER,LOW);
+    digitalWrite(RED,HIGH);
   }
 }
