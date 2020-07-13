@@ -5,16 +5,44 @@ int pin_lo = 9;
 int pin_mid = 8;
 int pin_hi = 7;
 
+//Variables for counting
+const unsigned long intervalRSSI = 100;
+const unsigned long intervalSensor = 5000;
+unsigned long currentTime;
+unsigned long previousRSSITime;
+unsigned long previousSensorTime;
+int rssiCount;
+int rssiTotal;
+
+//Variables for LED stuff
+int ledPins[] = {7,8,9,10};
+enum led {RED = 7, AMBER, GREEN, BLUE};
+int threshold = 75;
+int infCount;
+
 void setup() {
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9854ef626f7b9706e5bee0ca1bfbf35c1245c4ac
   Serial.begin(9600);
   BLE.begin();
   BLE.setLocalName("Proximity Sensor 10");
   randomSeed(analogRead(0));
-  pinMode(pin_prox, OUTPUT);
-  pinMode(pin_lo, OUTPUT);
-  pinMode(pin_mid, OUTPUT);
-  pinMode(pin_hi, OUTPUT);
 
+  //Initialise and flash each LED
+  for(int i =4; i >= 0; i--){
+    pinMode(ledPins[i],OUTPUT);
+    digitalWrite(ledPins[i], HIGH);
+    delay(500);
+    digitalWrite(ledPins[i], LOW);
+  }
+  previousRSSITime = 0;
+  previousSensorTime = 0;
+  rssiCount = 0;
+  rssiTotal = 0;
+  infCount = 0;
+  
   // turn on all lights to test
   digitalWrite(pin_prox, HIGH);
   digitalWrite(pin_lo, HIGH); 
